@@ -1,33 +1,89 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+body{
+  background-color: #fafafa;
+}
+.wrapper{
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 40px auto;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+form {
+  width: 100%;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+label{
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+input{
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  padding: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  margin: 15px 0px;
+  width: 278px;
+}
+
+.wrapper .btn {
+  background: #007bff;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  color: white;
+  cursor: pointer;
+
+}
+
+.full-btn{
+  display: block;
+  width: 300px;
+}
+
+.wrapper .btn:hover {
+  background: #0056b3;
+}
+
+.todo-list {
+  margin: 20px 0px;
+}
+
+.todo-list ul{
+list-style: none;
+padding-left: 0px;
+width: 300px;
+text-align: left;
+}
+
+.todo-list ul li {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 10px;
+  margin-bottom: 15px;
+}
+
+.float-right{
+  float: right;
+  font-size: 12px !important;
+  margin-top: -7px;
+}
+
+.btn[aria-disabled="true"] {
+  pointer-events: none; /* Prevents clicks */
+  opacity: 0.5; /* Makes it look disabled */
+  cursor: not-allowed; /* Shows a "disabled" cursor */
+  background-color: #ccc; /* Gray background */
+  color: #666; /* Dim text */
+  border: 1px solid #999;
+}
+
+.red{
+  background-color: red !important;
 }
