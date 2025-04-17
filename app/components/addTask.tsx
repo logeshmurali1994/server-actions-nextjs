@@ -8,7 +8,7 @@ const initialState = {
 const SubmitButton = () => {
     const { pending } = useFormStatus();
     
-    return  <button className={`btn full-btn`} aria-disabled={pending} type="submit">Add Task</button>
+    return  <button className={`btn full-btn`} aria-disabled={pending} disabled={pending} type="submit">Add Task {pending}</button>
 }
 
 const AddTask = () => {
@@ -16,7 +16,7 @@ const AddTask = () => {
     return (
         <form action={formAction}>
             <label htmlFor="todo"> Enter Task </label>
-            <input name="todo" id="todo" type="text" required />
+            <input name="todo" id="todo" type="text" />
             <SubmitButton />
             <p>{state?.message}</p>
         </form>

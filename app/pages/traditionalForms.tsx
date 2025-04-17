@@ -2,7 +2,7 @@
 
 import { FormEvent } from "react"
 
-export default function WithoutServerAction () {
+export default function TraditionalForms () {
     async function onsubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
 

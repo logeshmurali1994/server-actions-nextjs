@@ -19,8 +19,7 @@ export async function createTodo(prevState: any, formData: FormData) {
         revalidatePath('/');
         return { message: `todo "${data.text}" added successfully` };
     } catch (e) {
-        console.log(e);
-        
+        console.log(e);  
         return { message: 'todo not added with some erroes' };
     }
 }
@@ -33,12 +32,10 @@ export async function deleteTodo(id: number) {
     try {
         const client = await pool.connect();
         await client.query(`DELETE FROM todo WHERE id = ${id}`);
-        console.log('123123');
         revalidatePath('/');
         return { message: `todo deleted successfully` };
     } catch (e) {
         console.log(e);
-        
         return { message: 'todo not deleted with some erroes' };
     }
 
